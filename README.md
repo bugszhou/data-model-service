@@ -1,2 +1,4 @@
-# data-model-service
-基于JSON Schema的JavaScript数据模型服务
+## data-model-service
+----------------------------
+author: bugszhou | Email:bugszhou@outlook.com <br>
+description: 基于JSON Schema的JavaScript数据模型转换
