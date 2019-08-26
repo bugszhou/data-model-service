@@ -1,0 +1,2 @@
+!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e=e||self,function(){var t=e["data-model-service"],o=e["data-model-service"]=n();o.noConflict=function(){return e["data-model-service"]=t,o}}())}(this,function(){"use strict";var e=function(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")};return function n(){e(this,n)}});
+//# sourceMappingURL=data-model-service.common.js.map
