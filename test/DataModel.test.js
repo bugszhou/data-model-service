@@ -80,12 +80,12 @@ describe('DataModel所有测试用例', () => {
 
   it('parse传对象数组', () => {
     expect(dataModel.parse([{
-          name: '张三',
-          friends: ['李四', '王五'],
-        }])).toEqual([{
-          name: '张三',
-          friend1: '李四',
-        }]);
+      name: '张三',
+      friends: ['李四', '王五'],
+    }])).toEqual([{
+      name: '张三',
+      friend1: '李四',
+    }]);
   });
 
   it('parse传对象', () => {
@@ -291,5 +291,105 @@ describe('DataModel所有测试用例', () => {
       },
     });
     expect(dataModel1 instanceof DataModel).toBeTruthy();
+  });
+
+  it('复杂结构', () => {
+    const dataModel1 = new DataModel({
+      name: {
+        type: 'object',
+        description: '姓名',
+        from: 'names',
+        properties: {
+          friend1: {
+            type: 'string',
+            description: '好友1',
+            from: 'friends[0]',
+          },
+        },
+      },
+      age: {
+        type: 'string',
+        description: '好友1',
+        from: 'age',
+      },
+    });
+    expect(dataModel1.parse({
+      names: {
+        friends: ['张三', '王五', '李四']
+      },
+      age: 12,
+    })).toEqual({
+      name: {
+        friend1: '张三',
+      },
+      age: '12',
+    });
+  });
+
+  it('复杂结构 - 对象数组', () => {
+    const dataModel1 = new DataModel({
+      name: {
+        type: 'object',
+        description: '姓名',
+        from: 'names',
+        properties: {
+          friend1: {
+            type: 'string',
+            description: '好友1',
+            from: 'friends[0].name',
+          },
+        },
+      },
+      age: {
+        type: 'string',
+        description: '好友1',
+        from: 'age',
+      },
+    });
+    expect(dataModel1.parse({
+      names: {
+        friends: [{
+          name: '张三'
+        }, {
+          name: '王五'
+        }, {
+          name: '李四'
+        }]
+      },
+      age: 12,
+    })).toEqual({
+      name: {
+        friend1: '张三',
+      },
+      age: '12',
+    });
+  });
+
+  it('测试数据', () => {
+    const dataModel1 = new DataModel({
+      name: {
+        type: 'string',
+        description: '姓名',
+        from: 'nickname',
+        default: null, // 默认值, 有两种类型：function和其他基本数据类型
+      },
+      myFristFriendName: {
+        type: 'string',
+        description: '第一个好友的姓名',
+        from: 'friends[0].name',
+        default() {
+          return '暂无姓名';
+        },
+      },
+    });
+    expect(dataModel1.parse({
+      nickname: '张三',
+      friends: [
+        {
+          name: '李四',
+          age: 80
+        }
+      ]
+    })).toEqual({ name: '张三', myFristFriendName: '李四' });
   });
 });
