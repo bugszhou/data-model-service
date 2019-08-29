@@ -36,6 +36,18 @@
           }
         ]
       ]
+    },
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "esmodules": false
+            }
+          }
+        ]
+      ]
     }
   }
 }

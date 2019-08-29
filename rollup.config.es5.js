@@ -36,7 +36,7 @@ export default {
     commonjs(),
     globals(),
     babel({
-      configFile: path.resolve(__dirname, './src/entry/.babelrc'),
+      configFile: path.resolve(__dirname, './.babelrc'),
       runtimeHelpers: true,
       exclude: 'node_modules/**',
     }),

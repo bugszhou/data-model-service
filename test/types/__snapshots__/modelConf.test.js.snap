@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`测试 model字段列表 1`] = `
+Object {
+  "default": "",
+  "description": "",
+  "from": "",
+  "properties": "none",
+  "required": false,
+  "type": "",
+}
+`;
+
+exports[`测试 model的type字段类型集合 1`] = `
+Array [
+  "string",
+  "number",
+  "integer",
+  "boolean",
+  "object",
+  "array",
+  "null",
+]
+`;

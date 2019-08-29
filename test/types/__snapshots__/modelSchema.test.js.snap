@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`model的schema测试 model schema快照 1`] = `
+Object {
+  "default": Object {
+    "description": "默认值",
+    "required": false,
+    "type": "function",
+  },
+  "description": Object {
+    "description": "描述",
+    "required": false,
+    "type": "string",
+  },
+  "from": Object {
+    "description": "数据来源",
+    "required": true,
+    "type": "string",
+  },
+  "properties": Object {
+    "description": "属性",
+    "required": false,
+    "type": "object",
+  },
+  "required": Object {
+    "description": "是否必传",
+    "required": false,
+    "type": "boolean",
+  },
+  "type": Object {
+    "description": "类型",
+    "oneOf": Array [
+      "string",
+      "number",
+      "integer",
+      "boolean",
+      "object",
+      "array",
+      "null",
+    ],
+    "required": true,
+    "type": "string",
+  },
+}
+`;

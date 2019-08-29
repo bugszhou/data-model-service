@@ -1,3 +1,5 @@
-import DataModel from '../lib/index';
+import DataModel, { createDataModel } from '../lib/index';
+
+export { createDataModel };
 
 export default DataModel;
