@@ -43,7 +43,7 @@ const friendName = data.user.friends[0].name;
 
 ### 使用文档
 
-[点击查看](./docs/usual.md)
+[点击查看](docs/usual.md)
 
 
 
