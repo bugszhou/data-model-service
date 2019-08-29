@@ -4,7 +4,9 @@ import isArray from 'lodash.isarray';
 import typeOf from 'type-of';
 
 
-function error({ isPass = false, msg = '', val = '', expectedType = '', keyName = '', oneOf = [] } = {}) {
+function error({
+  isPass = false, msg = '', val = '', expectedType = '', keyName = '', oneOf = [],
+} = {}) {
   return {
     isPass,
     reason: {
@@ -21,10 +23,10 @@ function error({ isPass = false, msg = '', val = '', expectedType = '', keyName 
 }
 
 function checkFn(data, schema) {
-  let errors = [],
+  const errors = [],
     passData = [];
   Object.entries(schema).some(([keyName, schemaItem]) => {
-    let originVal = data[keyName];
+    const originVal = data[keyName];
     if (typeOf(schemaItem.required) === 'boolean' && !schemaItem.required) {
       passData.push(error({
         isPass: true,
@@ -56,7 +58,7 @@ function checkFn(data, schema) {
       return true;
     }
 
-    let oneOf = schemaItem.oneOf;
+    const { oneOf } = schemaItem;
     if (isArray(oneOf) && oneOf.length > 0) {
       if (oneOf.includes(originVal)) {
         passData.push(error({
@@ -67,17 +69,16 @@ function checkFn(data, schema) {
           msg: '',
         }));
         return false;
-      } else {
-        errors.push(error({
-          isPass: false,
-          val: originVal,
-          expectedType: schemaItem.type,
-          keyName,
-          msg: `oneOf not found ${originVal}`,
-          oneOf,
-        }));
-        return true;
       }
+      errors.push(error({
+        isPass: false,
+        val: originVal,
+        expectedType: schemaItem.type,
+        keyName,
+        msg: `oneOf not found ${originVal}`,
+        oneOf,
+      }));
+      return true;
     }
 
     passData.push(error({
@@ -87,6 +88,7 @@ function checkFn(data, schema) {
       keyName,
       msg: '',
     }));
+    return false;
   });
 
   return { errors, passData };
@@ -145,7 +147,7 @@ function vaildData(data, schema) {
         type: '',
         oneOf: [],
       },
-    }
+    },
   };
 }
 

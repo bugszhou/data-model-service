@@ -8,8 +8,8 @@ class Base {
    * @returns {{object}}
    */
   getModel() {
-      return {};
-  };
+    return {};
+  }
 
   /**
    * 缓存解析后的数据
