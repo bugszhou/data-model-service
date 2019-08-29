@@ -41,6 +41,32 @@ const friendName = data.user.friends[0].name;
 
 * 解决空数据使用默认值
 
+### 使用案例
+
+```javascript
+import DataModel from 'data-model-service';
+
+const userDataIns = new DataModel(userModel);
+
+const originData = {
+      names: {
+        friends: ['张三', '王五', '李四']
+      },
+      age: 12,
+    }
+};
+
+const userData = userDataIns.parse(originData);
+
+// userData的值为：
+{
+ name: {
+   friend1: '张三',
+ },
+ age: '12',
+}
+```
+
 ### 使用文档
 
 [点击查看](./docs/usual.md)
