@@ -1,6 +1,6 @@
 {
   "name": "data-model-service",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "JavaScript数据模型转换",
   "author": "bugszhou | Email:bugszhou@outlook.com",
   "main": "index.js",
