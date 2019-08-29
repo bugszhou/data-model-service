@@ -5,6 +5,11 @@
   "author": "bugszhou | Email:bugszhou@outlook.com",
   "main": "index.js",
   "module": "dist/data-model-service.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bugszhou/data-model-service.git"
+  },
+  "homepage": "https://github.com/bugszhou/data-model-service#readme",
   "scripts": {
     "test": "jest",
     "test:w": "jest --watchAll",
