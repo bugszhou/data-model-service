@@ -41,13 +41,13 @@ export default {
     json(),
     resolve(),
     builtins(),
-    commonjs(),
     globals(),
     babel({
       configFile: path.resolve(__dirname, './.babelrc'),
       runtimeHelpers: true,
       exclude: 'node_modules/**',
     }),
+    commonjs(),
     terser({
       include: [/^.+\.common\.js$/],
     }),
