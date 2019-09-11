@@ -1,6 +1,7 @@
 import isEmpty from 'lodash.isempty';
 import isObject from 'lodash.isobject';
 import isArray from 'lodash.isarray';
+import toPairs from 'lodash.topairs';
 import typeOf from 'type-of';
 
 
@@ -25,7 +26,7 @@ function error({
 function checkFn(data, schema) {
   const errors = [],
     passData = [];
-  Object.entries(schema).some(([keyName, schemaItem]) => {
+  toPairs(schema).some(([keyName, schemaItem]) => {
     const originVal = data[keyName];
     if (typeOf(schemaItem.required) === 'boolean' && !schemaItem.required) {
       passData.push(error({

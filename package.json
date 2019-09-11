@@ -33,6 +33,7 @@
     "lodash.isempty": "^4.4.0",
     "lodash.isobject": "^3.0.2",
     "lodash.mapvalues": "^4.6.0",
+    "lodash.topairs": "^4.3.0",
     "type-of": "^2.0.1"
   },
   "devDependencies": {
