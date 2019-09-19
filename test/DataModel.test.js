@@ -420,4 +420,33 @@ describe('DataModel所有测试用例', () => {
       ]
     })).toEqual({ name: '张三', myFristFriendName: '暂无姓名' });
   });
+
+  it('测试数据 为根属性', () => {
+    const dataModel1 = new DataModel({
+      userInfo: {
+        type: 'object',
+        description: '用户信息',
+        from: '.',
+        properties: {
+          nickname: {
+            type: 'string',
+            description: '昵称',
+            from: 'nickname',
+            default: '全家粉丝',
+          },
+          avatar: {
+            type: 'string',
+            description: '头像',
+            from: 'headimgurl',
+            default: '',
+          },
+        },
+        default: {},
+      },
+    });
+    expect(dataModel1.parse({
+      headimgurl: "123",
+      nickname: "Gary",
+    })).toEqual({ userInfo: { nickname: 'Gary', avatar: '123' }});
+  });
 });
