@@ -392,4 +392,32 @@ describe('DataModel所有测试用例', () => {
       ]
     })).toEqual({ name: '张三', myFristFriendName: '李四' });
   });
+
+  it('测试数据 为null', () => {
+    const dataModel1 = new DataModel({
+      name: {
+        type: 'string',
+        description: '姓名',
+        from: 'nickname',
+        default: null, // 默认值, 有两种类型：function和其他基本数据类型
+      },
+      myFristFriendName: {
+        type: 'string',
+        description: '第一个好友的姓名',
+        from: 'friends[0].name',
+        default() {
+          return '暂无姓名';
+        },
+      },
+    });
+    expect(dataModel1.parse({
+      nickname: '张三',
+      friends: [
+        {
+          name: null,
+          age: 80
+        }
+      ]
+    })).toEqual({ name: '张三', myFristFriendName: '暂无姓名' });
+  });
 });
