@@ -1,3 +1,13 @@
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/bugszhou/data-model-service/compare/v0.0.11...v0.1.0) (2019-09-19)
+
+
+### Features
+
+* Support "." ([2a22bb0](https://github.com/bugszhou/data-model-service/commit/2a22bb0))
+
+
+
 <a name="0.0.11"></a>
 ## [0.0.11](https://github.com/bugszhou/data-model-service/compare/v0.0.10...v0.0.11) (2019-09-19)
 
