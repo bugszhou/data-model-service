@@ -446,7 +446,7 @@ describe('DataModel所有测试用例', () => {
     });
     expect(dataModel1.parse({
       headimgurl: "123",
-      nickname: "Gary",
-    })).toEqual({ userInfo: { nickname: 'Gary', avatar: '123' }});
+      nickname: "",
+    })).toEqual({ userInfo: { nickname: '全家粉丝', avatar: '123' }});
   });
 });
