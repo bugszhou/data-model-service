@@ -1,4 +1,5 @@
 scripts/**/*.js
+test/**/*.js
 node_modules/*.js
 rollup.config.es5.js
 rollup.config.js

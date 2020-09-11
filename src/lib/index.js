@@ -53,6 +53,9 @@ class DataModel extends Base{
   #parseObject(data) {
     return mapValues(this.#model, (schema) => {
       let firstVal = getVal(data, schema.from, this.#getDefult(schema.default));
+      if (firstVal === null) {
+        firstVal = this.#getDefult(schema.default);
+      }
       let val = '';
       if (schema.from === '.') {
         val = this.#deepParse(data, schema);
