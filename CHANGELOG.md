@@ -1,3 +1,23 @@
+# [0.2.0](https://github.com/bugszhou/data-model-service/compare/4bcc2aba73863bdbcc3b89cd808230ed02737c06...v0.2.0) (2020-09-11)
+
+
+### Bug Fixes
+
+* Null转换错误 ([0805c36](https://github.com/bugszhou/data-model-service/commit/0805c36690ab967bebd4f8e16c9cfa438a5269dd))
+* Rm Object.entries, use lodash.toPairs ([de4ec27](https://github.com/bugszhou/data-model-service/commit/de4ec27dd712a1fb9b6089c41a5a1b877b7e9e9c))
+* 空字符串问题 ([f4bddd6](https://github.com/bugszhou/data-model-service/commit/f4bddd630c83154f946d3f86e0e7bc6a61a8deac))
+
+
+### Features
+
+* Init project ([4bcc2ab](https://github.com/bugszhou/data-model-service/commit/4bcc2aba73863bdbcc3b89cd808230ed02737c06))
+* Support "." ([2a22bb0](https://github.com/bugszhou/data-model-service/commit/2a22bb0d355dc48c9d80976d0afa3dbc06d4d734))
+* 值为null时，使用默认值 ([bc0a702](https://github.com/bugszhou/data-model-service/commit/bc0a70257b47e423c06f4e73b98c8c5c30bf9f38))
+* 完成基础模型转换 ([cb21747](https://github.com/bugszhou/data-model-service/commit/cb21747c4d1a496e4e617a5d23bd0d191aa12aa1))
+* 完成复杂对象转换 ([bd1ac98](https://github.com/bugszhou/data-model-service/commit/bd1ac98a882be45af5de87ccea5ca451134a9cb6))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/bugszhou/data-model-service/compare/v0.1.0...v0.1.1) (2019-09-20)
 
