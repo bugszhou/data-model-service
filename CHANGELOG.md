@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/bugszhou/data-model-service/compare/v0.3.0...v0.3.1) (2020-09-15)
+
+
+### Bug Fixes
+
+* 类型判断错误 ([ad27502](https://github.com/bugszhou/data-model-service/commit/ad2750278f066da14c85948aedcb539f51be170d))
+
+
+
 # [0.3.0](https://github.com/bugszhou/data-model-service/compare/v0.2.0...v0.3.0) (2020-09-15)
 
 
