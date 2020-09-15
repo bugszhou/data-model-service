@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/bugszhou/data-model-service/compare/v0.2.0...v0.3.0) (2020-09-15)
+
+
+### Features
+
+* 增加format功能 ([4277588](https://github.com/bugszhou/data-model-service/commit/4277588a4442fc7598f1e63044d09a34afc68c21))
+
+
+
 # [0.2.0](https://github.com/bugszhou/data-model-service/compare/4bcc2aba73863bdbcc3b89cd808230ed02737c06...v0.2.0) (2020-09-11)
 
 
