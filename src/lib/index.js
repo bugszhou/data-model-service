@@ -69,7 +69,7 @@ class DataModel extends Base{
         val = this.#getDefult(schema.default);
       }
       let formatVal = this.#formatVal(val, schema.type);
-      if (typeof formatVal === "function") {
+      if (typeof schema.format === "function") {
         formatVal = schema.format(formatVal);
       }
       return formatVal;

@@ -441,6 +441,9 @@ describe("DataModel所有测试用例", () => {
         default() {
           return "暂无姓名";
         },
+        format(val) {
+          return val;
+        },
       },
     });
     expect(
