@@ -70,7 +70,7 @@ class DataModel extends Base{
       }
       let formatVal = this.#formatVal(val, schema.type);
       if (typeof schema.format === "function") {
-        formatVal = schema.format(formatVal);
+        formatVal = schema.format(formatVal, data);
       }
       return formatVal;
     });
