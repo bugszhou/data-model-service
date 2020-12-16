@@ -1,3 +1,12 @@
+## [0.5.2](https://github.com/bugszhou/data-model-service/compare/v0.5.1...v0.5.2) (2020-12-16)
+
+
+### Features
+
+* Delete ([af4b0c9](https://github.com/bugszhou/data-model-service/commit/af4b0c910458dfa8881167f11578f030eb6ee800))
+
+
+
 ## [0.5.1](https://github.com/bugszhou/data-model-service/compare/v0.5.0...v0.5.1) (2020-12-16)
 
 
