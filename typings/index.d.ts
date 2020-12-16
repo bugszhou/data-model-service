@@ -1,23 +1,21 @@
-declare namespace IDataModel {
-  interface IItem {
-    type: "string" | "number" | "object" | "array" | "boolean";
-    description?: string;
-    from: string;
-    default: any;
-    format?: (val: any) => any;
-  }
+interface IDataModelItem {
+  type: "string" | "number" | "object" | "array" | "boolean";
+  description?: string;
+  from: string;
+  default: any;
+  format?: (val: any) => any;
+}
 
-  interface IProperties {
-    [key: string]: IItem & {
-      properties?: IProperties;
-    };
-  }
+interface IProperties {
+  [key: string]: IDataModelItem & {
+    properties?: IProperties;
+  };
+}
 
-  interface IModel {
-    [key: string]: IItem & {
-      properties?: IProperties;
-    };
-  }
+interface IDataModel {
+  [key: string]: IDataModelItem & {
+    properties?: IProperties;
+  };
 }
 
 declare class DataModel<IDataReturn> {
@@ -31,4 +29,8 @@ declare class DataModel<IDataReturn> {
    * @param originData 原始数据
    */
   parse: (originData: any) => IDataReturn;
+}
+
+declare module "data-model-service" {
+    export default DataModel;
 }
