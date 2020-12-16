@@ -1,3 +1,12 @@
+## [0.5.3](https://github.com/bugszhou/data-model-service/compare/v0.5.2...v0.5.3) (2020-12-16)
+
+
+### Bug Fixes
+
+* Constructor设置错误 ([c1f420e](https://github.com/bugszhou/data-model-service/commit/c1f420e470dc64f99ed58966bbc6d483a4ddb642))
+
+
+
 ## [0.5.2](https://github.com/bugszhou/data-model-service/compare/v0.5.1...v0.5.2) (2020-12-16)
 
 
