@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/bugszhou/data-model-service/compare/v0.4.0...v0.5.0) (2020-12-16)
+
+
+### Features
+
+* Add typing ([9e778bf](https://github.com/bugszhou/data-model-service/commit/9e778bf3a7f807d654b01dc8da9470658f3632f8))
+
+
+
 # [0.4.0](https://github.com/bugszhou/data-model-service/compare/v0.3.1...v0.4.0) (2020-12-04)
 
 
