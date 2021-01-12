@@ -8,7 +8,7 @@ interface IDataModelItem {
    * @param val 当前字段原始值
    * @param originModelData 所有数据原始值
    */
-  format?: (val: any, originModelData) => any;
+  format?: (val: any, originModelData?: any) => any;
 }
 
 interface IProperties {
