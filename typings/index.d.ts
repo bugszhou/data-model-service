@@ -3,7 +3,12 @@ interface IDataModelItem {
   description?: string;
   from: string;
   default: any;
-  format?: (val: any) => any;
+  /**
+   * 数据格式化
+   * @param val 当前字段原始值
+   * @param originModelData 所有数据原始值
+   */
+  format?: (val: any, originModelData) => any;
 }
 
 interface IProperties {
