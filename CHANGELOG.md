@@ -1,3 +1,12 @@
+## [0.5.5](https://github.com/bugszhou/data-model-service/compare/v0.5.4...v0.5.5) (2021-01-12)
+
+
+### Features
+
+* 修改为可选的 ([085304c](https://github.com/bugszhou/data-model-service/commit/085304c15d98c54db12fe9d1ca6b08afa56b9beb))
+
+
+
 ## [0.5.4](https://github.com/bugszhou/data-model-service/compare/v0.5.3...v0.5.4) (2021-01-12)
 
 
