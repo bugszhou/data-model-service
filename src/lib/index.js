@@ -1,13 +1,13 @@
-import isObject from 'lodash.isobject';
-import isEmpty from 'lodash.isempty';
-import isArray from 'lodash.isarray';
-import mapValues from 'lodash.mapvalues';
-import getVal from 'lodash.get';
-import Base from './interface';
-import checkModel from './utils/checkModel';
-import modelSchema from './types/modelSchema';
+import isObject from "lodash.isobject";
+import isEmpty from "lodash.isempty";
+import isArray from "lodash.isarray";
+import mapValues from "lodash.mapvalues";
+import getVal from "lodash.get";
+import Base from "./interface";
+import checkModel from "./utils/checkModel";
+import modelSchema from "./types/modelSchema";
 
-class DataModel extends Base{
+class DataModel extends Base {
   /**
    * 缓存用户设置的数据模型
    * @type {{object}}
@@ -37,7 +37,6 @@ class DataModel extends Base{
 
   parse(data = {}) {
     if (!isObject(data)) {
-      console.error(`data require object`);
       return this.#parseNotObject();
     }
     if (isEmpty(data) && !isArray(data)) {
@@ -53,14 +52,24 @@ class DataModel extends Base{
   #parseObject(data) {
     return mapValues(this.#model, (schema) => {
       let firstVal = getVal(data, schema.from, this.#getDefult(schema.default));
+
       if (firstVal === null) {
         firstVal = this.#getDefult(schema.default);
       }
-      let val = '';
-      if (schema.from === '.') {
+
+      if (typeof schema.stopConvert === "function") {
+        const stopResult = schema.stopConvert(getVal(data, schema.from), data);
+        if (stopResult === true) {
+          console.log(firstVal);
+          return this.#formatVal(firstVal, schema.type);
+        }
+      }
+
+      let val = "";
+      if (schema.from === ".") {
         val = this.#deepParse(data, schema);
       } else {
-        if (firstVal === '') {
+        if (firstVal === "") {
           firstVal = this.#getDefult(schema.default);
         }
         val = this.#deepParse(firstVal, schema);
@@ -77,7 +86,7 @@ class DataModel extends Base{
   }
 
   #deepParse(data, schema) {
-    if (schema.type === 'object' || schema.type === 'array') {
+    if (schema.type === "object" || schema.type === "array") {
       if (schema.properties) {
         const tmpDataModel = createDataModel(schema.properties);
         return tmpDataModel.parse(data);
@@ -87,10 +96,10 @@ class DataModel extends Base{
   }
 
   #parseArray(data) {
-    if (typeof data[0] === 'undefined') {
+    if (typeof data[0] === "undefined") {
       return data;
     }
-    if (['number', 'boolean', 'string'].includes(typeof data[0])) {
+    if (["number", "boolean", "string"].includes(typeof data[0])) {
       return data;
     }
     return data.map((item) => {
@@ -104,12 +113,12 @@ class DataModel extends Base{
    * @returns {*}
    */
   #getDefult(defaultVal) {
-    if (typeof defaultVal === 'function') {
+    if (typeof defaultVal === "function") {
       return defaultVal();
     }
 
-    if (typeof defaultVal === 'undefined' || defaultVal === null) {
-      return '';
+    if (typeof defaultVal === "undefined" || defaultVal === null) {
+      return "";
     }
 
     return defaultVal;
@@ -121,15 +130,15 @@ class DataModel extends Base{
       return val;
     }
 
-    if (expectedType === 'number') {
+    if (expectedType === "number") {
       return Number(val);
     }
 
-    if (expectedType === 'string') {
+    if (expectedType === "string") {
       return `${val}`;
     }
 
-    if (expectedType === 'boolean') {
+    if (expectedType === "boolean") {
       return !!val;
     }
     return val;
@@ -143,7 +152,7 @@ class DataModel extends Base{
   }
 }
 
-export const MODULE_NAME = 'data-model-service';
+export const MODULE_NAME = "data-model-service";
 
 export function createDataModel(model = {}) {
   return new DataModel(model);

@@ -476,7 +476,7 @@ describe("DataModel所有测试用例", () => {
         default: [], // 默认值, 有两种类型：function和其他基本数据类型
       },
     });
-    expect(dataModel1.parse({list: null})).toEqual({ data: [] });
+    expect(dataModel1.parse({ list: null })).toEqual({ data: [] });
   });
 
   it("测试数据 为根属性", () => {
@@ -490,7 +490,7 @@ describe("DataModel所有测试用例", () => {
             type: "string",
             description: "昵称",
             from: "nickname",
-            default: "全家粉丝",
+            default: "粉丝",
           },
           avatar: {
             type: "string",
@@ -507,6 +507,41 @@ describe("DataModel所有测试用例", () => {
         headimgurl: "123",
         nickname: "",
       }),
-    ).toEqual({ userInfo: { nickname: "全家粉丝", avatar: "123" } });
+    ).toEqual({ userInfo: { nickname: "粉丝", avatar: "123" } });
+  });
+
+  it("终止转换", () => {
+    const dataModel1 = new DataModel({
+      userInfo: {
+        type: "object",
+        description: "用户信息",
+        from: "data",
+        properties: {
+          nickname: {
+            type: "string",
+            description: "昵称",
+            from: "nickname",
+            default: "粉丝",
+          },
+          avatar: {
+            type: "string",
+            description: "头像",
+            from: "headimgurl",
+            default: "",
+          },
+        },
+        default: {},
+        stopConvert(val) {
+          if (val === null) {
+            return true;
+          }
+        },
+      },
+    });
+    expect(
+      dataModel1.parse({
+        data: null,
+      }),
+    ).toEqual({ userInfo: {} });
   });
 });

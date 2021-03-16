@@ -9,6 +9,12 @@ interface IDataModelItem {
    * @param originModelData 所有数据原始值
    */
   format?: (val: any, originModelData?: any) => any;
+  /**
+   * 是否终止转换
+   * @param val 当前字段原始值
+   * @param originModelData 所有数据原始值
+   */
+  stopConvert?: (val: any, originModelData?: any) => any;
 }
 
 interface IProperties {
