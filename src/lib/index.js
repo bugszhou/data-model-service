@@ -60,7 +60,6 @@ class DataModel extends Base {
       if (typeof schema.stopConvert === "function") {
         const stopResult = schema.stopConvert(getVal(data, schema.from), data);
         if (stopResult === true) {
-          console.log(firstVal);
           return this.#formatVal(firstVal, schema.type);
         }
       }
