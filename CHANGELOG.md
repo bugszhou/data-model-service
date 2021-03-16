@@ -1,3 +1,12 @@
+## [0.6.1](https://github.com/bugszhou/data-model-service/compare/v0.6.0...v0.6.1) (2021-03-16)
+
+
+### Bug Fixes
+
+* 删除调试代码 ([3048c46](https://github.com/bugszhou/data-model-service/commit/3048c46b4705bb93a8d6460b4648379a9ab82c65))
+
+
+
 # [0.6.0](https://github.com/bugszhou/data-model-service/compare/v0.5.5...v0.6.0) (2021-03-16)
 
 
