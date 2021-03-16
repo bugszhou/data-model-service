@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/bugszhou/data-model-service/compare/v0.5.5...v0.6.0) (2021-03-16)
+
+
+### Features
+
+* Add stopConvert ([87e7786](https://github.com/bugszhou/data-model-service/commit/87e7786a20a034923d1ddb8e0c60204957c489e9))
+
+
+
 ## [0.5.5](https://github.com/bugszhou/data-model-service/compare/v0.5.4...v0.5.5) (2021-01-12)
 
 
