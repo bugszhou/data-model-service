@@ -43,5 +43,8 @@ declare class DataModel<IDataReturn> {
 }
 
 declare module "data-model-service" {
-    export default DataModel;
+  export type IDataModelDO<ISchema extends Record<string, any>> = {
+    [key in keyof ISchema]: ISchema[key]["default"];
+  };
+  export default DataModel;
 }
