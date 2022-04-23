@@ -34,7 +34,7 @@ declare class DataModel<IDataReturn> {
    * 构造函数
    * @param model 定义的数据模型
    */
-  constructor(model: IDataModel);
+  constructor(model: Record<string, any>);
   /**
    * 将原始数据转换新的数据格式
    * @param originData 原始数据

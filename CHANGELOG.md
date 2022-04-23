@@ -1,3 +1,12 @@
+## [0.6.2](https://github.com/bugszhou/data-model-service/compare/v0.6.1...v0.6.2) (2021-09-14)
+
+
+### Features
+
+* 增加类型 ([bf51c41](https://github.com/bugszhou/data-model-service/commit/bf51c41b1cd02ea061cf64aefdbcd47561668c04))
+
+
+
 ## [0.6.1](https://github.com/bugszhou/data-model-service/compare/v0.6.0...v0.6.1) (2021-03-16)
 
 
