@@ -29,12 +29,12 @@ interface IDataModel {
   };
 }
 
-declare class DataModel<IDataReturn> {
+declare class DataModel<IDataReturn, IModel = any> {
   /**
    * 构造函数
    * @param model 定义的数据模型
    */
-  constructor(model: Record<string, any>);
+  constructor(model: Record<string, IModel>);
   /**
    * 将原始数据转换新的数据格式
    * @param originData 原始数据
