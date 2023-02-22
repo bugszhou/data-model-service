@@ -105,6 +105,24 @@ describe("DataModel所有测试用例", () => {
     });
   });
 
+  it("parse传基础类型数组", () => {
+    const dataModel1 = new DataModel({
+      placeholder: {
+        type: "array",
+        description: "姓名",
+        from: "name",
+        default: [],
+      },
+    });
+    expect(
+      dataModel1.parse({
+        name: ["张三"]
+      }),
+    ).toEqual({
+      placeholder: ["张三"],
+    });
+  });
+
   it("parse传字符串转数值", () => {
     const dataModel1 = new DataModel({
       name: {

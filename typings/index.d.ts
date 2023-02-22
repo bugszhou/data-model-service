@@ -46,5 +46,16 @@ declare module "data-model-service" {
   export type IDataModelDO<ISchema extends Record<string, any>> = {
     [key in keyof ISchema]: ISchema[key]["default"];
   };
+
+  export type IDO<ISchema extends Record<string, any>> = {
+    [key in keyof ISchema]: ISchema[key]["default"] extends any[]
+      ? ISchema[key]["properties"] extends object
+        ? ISchema[key]["elementType"][]
+        : IDO<ISchema[key]["properties"]>[]
+      : ISchema[key]["default"] extends object
+      ? IDO<ISchema[key]["properties"]>
+      : ISchema[key]["default"];
+  };
+
   export default DataModel;
 }
