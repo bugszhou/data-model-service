@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/bugszhou/data-model-service/compare/v0.7.0...v0.8.0) (2023-02-22)
+
+
+### Features
+
+* 增加类型工具 ([0be0fc5](https://github.com/bugszhou/data-model-service/commit/0be0fc57cc142be684e95a20dfa2fb2671da90f2))
+
+
+
 # [0.7.0](https://github.com/bugszhou/data-model-service/compare/v0.6.2...v0.7.0) (2022-04-23)
 
 
