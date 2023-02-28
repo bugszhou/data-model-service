@@ -50,8 +50,8 @@ declare module "data-model-service" {
   export type IDO<ISchema extends Record<string, any>> = {
     [key in keyof ISchema]: ISchema[key]["default"] extends any[]
       ? ISchema[key]["properties"] extends object
-        ? ISchema[key]["elementType"][]
-        : IDO<ISchema[key]["properties"]>[]
+        ? IDO<ISchema[key]["properties"]>[]
+        : ISchema[key]["elementType"][]
       : ISchema[key]["default"] extends object
       ? IDO<ISchema[key]["properties"]>
       : ISchema[key]["default"];
